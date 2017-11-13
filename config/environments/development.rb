@@ -42,6 +42,17 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  
+
+
+
+
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
