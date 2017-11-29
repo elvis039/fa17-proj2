@@ -1,0 +1,10 @@
+TODO:
+	- Create movie
+	- Add first 100 movies to home index so something is already there
+	- User playlists
+	- User profile
+		- Comment section for others to comment about user?
+		- Total likes on his comments
+		- Store movie title under review model to save table access?
+	- Ability to like reviews
+	

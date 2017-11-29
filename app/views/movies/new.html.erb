@@ -1,0 +1,15 @@
+<h1>Which is the correct movie you wish to add?</h1>
+	<% @results.each do |r| %>
+		<%= form_for Movie.new, url: movies_new_path(r) do |f| %> 	
+		<%= f.submit r['title'] %>
+  		<% end %>
+	<% end %>
+<h3>Search Again</h3>
+	<%= form_for Movie.new, url: movies_new_path do |f| %>
+	Title: <%= f.text_area :title %><br />
+	<%= f.submit %>
+	<% end %>
+<%= link_to "Take me back.", home_path %></br>
+
+
+

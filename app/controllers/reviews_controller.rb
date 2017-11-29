@@ -5,8 +5,6 @@ class ReviewsController < ApplicationController
   	review.user = current_user
   	review.movie = movie
   	review.update(review_params)
-  	puts "****************************************************************"
-  	puts review
   	review.save!
   	redirect_to movie_path(movie)
   end

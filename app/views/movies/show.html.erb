@@ -4,14 +4,14 @@
 
 <p>Movie's reviews</p>
 <% @movie.reviews.each do |r| %>
-	<p><%= "#{r.user.username}'s rating: #{r.rating}" %></br>
+	<p><%= link_to "#{r.user.username}'s", users_show_path(r.user) %><%= " rating: #{r.rating}" %></br>
 		<%= r.comment %></p>
 <% end %>
 
 </br>
 </br>
 <h3>Review this movie!</h3>
-<%= form_for Review.new, url: movie_path(@movie) do |f| %>
+<%= form_for Review.new, url: create_review_path(@movie) do |f| %>
 	Rating: <%= f.number_field :rating %>
 	<br />
 	Content: <%= f.text_area :comment %>
