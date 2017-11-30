@@ -1,3 +1,4 @@
+
 <html>
   <body>
     <div id="main-container" class="container-fluid">
@@ -11,7 +12,7 @@
         <% if user_signed_in? %>
           
           <% @movies.each do |m| %>
-            <%= link_to "#{m.title}", movie_path(m), class:'btn-success' %></br>
+            <%= link_to "#{m.title}", movie_path(m), class:'btn' %></br>
           <% end %>
   <h3>Add movie to our records!</h3>
   <%= form_for Movie.new, controller: 'movies', method: :get, url: movies_new_path do |f| %> 	

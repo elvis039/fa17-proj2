@@ -1,3 +1,8 @@
+<html>
+  <body>
+    <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div id="main-content" class="col-xs-9">
 <h1><%= @movie.title %></h1>
 <%= form_for @movie, url: playlists_add_path(@movie) do |f| %>
 	<%= f.submit "Add this move to a playlist!" %></br>
@@ -33,4 +38,10 @@
 </br>
 </br>
 <%= link_to "Return Home", home_path %>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 

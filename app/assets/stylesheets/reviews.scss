@@ -1,3 +1,25 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+  background: #f2f5f8;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-cont {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.app-cont-thin {
+  max-width: 650px;
+  background: #fff;
+  padding: 1em 0;
+  border-radius: 3px;
+}
