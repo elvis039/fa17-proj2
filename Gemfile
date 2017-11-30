@@ -9,7 +9,11 @@ end
 
 # Devise
 gem 'devise'
+# Captcha
+gem "recaptcha", require: "recaptcha/rails"
 
+# devnote
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
 
 

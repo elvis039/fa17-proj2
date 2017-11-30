@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130012355) do
+ActiveRecord::Schema.define(version: 20171130033812) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -20,18 +20,18 @@ ActiveRecord::Schema.define(version: 20171130012355) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies_playlists", id: false, force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "movie_id"
+    t.index ["movie_id"], name: "index_movies_playlists_on_movie_id"
+    t.index ["playlist_id"], name: "index_movies_playlists_on_playlist_id"
+  end
+
   create_table "playlists", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "playlists_movies", id: false, force: :cascade do |t|
-    t.integer "playlist_id"
-    t.integer "movie_id"
-    t.index ["movie_id"], name: "index_playlists_movies_on_movie_id"
-    t.index ["playlist_id"], name: "index_playlists_movies_on_playlist_id"
   end
 
   create_table "reviews", force: :cascade do |t|

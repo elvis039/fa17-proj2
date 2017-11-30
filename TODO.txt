@@ -1,14 +1,12 @@
 TODO:
-	- Create movie
-		- STORE SUMMARY IN MOVIE MODEL AS TEXT IN ORDER TO REMOVE API REQUEST? (THIS WAY ONLY NEED 1 TOTAL TO GET MOVIE)
-	- Add first 100 movies to home index so something is already there
-	- User playlists
-		- guides.rubyonrails.org/form_helpers.html
-	- User profile
-		- Comment section for others to comment about user?
-		- Total likes on user's comments
-		- Store movie title under review model to save table access?
-	- Ability to like reviews
-	- Ability to delete own reviews	
-	- Cap max review int range at 0 - 10
-	
+		- ability to delete movie from a playlist
+	- Add captcha gem
+		- flash message for fail to captcha
+		- add captch to review creation (show.html.erb for movies)
+	- Make things pretty
+	- flash messages
+		- flash for adding non-unique movie (or any violation of validaitons))
+	- re-add validations
+	- add 2 more users to seed
+	- add playlist to seed
+	- add review to seed

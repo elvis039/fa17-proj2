@@ -1,16 +1,19 @@
 <% if user_signed_in? %>
-
+  
   <% @movies.each do |m| %>
     <%= link_to "#{m.title}", movie_path(m) %></br>
   <% end %>
 
   <h3>Add movie to our records!</h3>
   <%= form_for Movie.new, controller: 'movies', method: :get, url: movies_new_path do |f| %> 	
-	Title: <%= f.text_area :title %>
-	<br />
-	<%= f.submit %>
+    <%= recaptcha_tags %>
+     Title: <%= f.text_area :title %>
+	   <br />
+
+	   <%= f.submit %>
   <% end %>
 <% else %>
   <%= link_to "Log In", new_user_session_path %></br>
   <%= link_to "Please signup before proceeding (this is placeholder text)", new_user_registration_path %>
+
 <% end %>

@@ -1,7 +1,13 @@
 <h1><%= @movie.title %></h1>
-
+<%= form_for @movie, url: playlists_add_path(@movie) do |f| %>
+	<%= f.submit "Add this move to a playlist!" %></br>
+	Playlist: <%= f.collection_select(:playlist_ids, current_user.playlists.all, :id, :name) %>
+	</br>
+	
+<% end %>
 
 <p><%= @obj['overview'] %></p>
+
 
 <p>Movie's reviews</p>
 <% @movie.reviews.each do |r| %>
@@ -28,4 +34,3 @@
 </br>
 <%= link_to "Return Home", home_path %>
 
-<%= options_from_collection_for_select(current_user.playlists.all, :id, :name) %>

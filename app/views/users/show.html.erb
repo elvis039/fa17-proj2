@@ -11,10 +11,15 @@
 
 <h1>Playlists</h1>
 <% @user.playlists.each do |r| %>
-	<p><%= r.name %></p></br>
-	<%= button_to "Delete", playlists_delete_path(r) %>
+	<p><%= r.name %>
+	<% if @user.id == current_user.id then %>
+		<%= button_to "Delete", playlists_delete_path(r) %>
+	<% end %></p>
+
 	<% r.movies.each do |m| %>
-		<%= r.title %>	
+		<%= Movie.find(m.id).title %>
+
+		<%= button_to "Delete", playlists_delete_movie_path({"movie" => m, "playlist" => r}) %>
 	<% end %>
 <% end %>
 
