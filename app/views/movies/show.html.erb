@@ -4,15 +4,18 @@
 
 <p>Movie's reviews</p>
 <% @movie.reviews.each do |r| %>
-	<p><%= link_to "#{r.user.username}'s", users_show_path(r.user) %><%= " rating: #{r.rating}" %></br>
-		<%= r.comment %></p>
+	<p><%= link_to "#{r.user.username}'s", users_show_path(r.user) %><%= " rating: #{r.rating}/10" %></br>
+		<%= r.comment %></br>
+		<% if current_user.reviews.exists?(r.id) %>
+			<%= link_to "Delete", reviews_delete_path(r) %>
+		<% end %>
 <% end %>
 
 </br>
 </br>
 <h3>Review this movie!</h3>
-<%= form_for Review.new, url: create_review_path(@movie) do |f| %>
-	Rating: <%= f.number_field :rating %>
+<%= form_for Review.new, url: reviews_create_path(@movie) do |f| %>
+	Rating: <%= f.number_field :rating, in: 0..10 %>
 	<br />
 	Content: <%= f.text_area :comment %>
 	<br />

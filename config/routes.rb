@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get	'movies/new', to: 'movies#new', as: 'movies_new'
   post	'movies/new', to: 'movies#create'
   get 	'movies/:id', to: 'movies#show', as: 'movie'
-  post 	'reviews/:id', to: 'reviews#create', as: 'create_review'
+  post 	'reviews/:id', to: 'reviews#create', as: 'reviews_create'
+  get 	'reviews/:id', to: 'reviews#delete', as: 'reviews_delete'
+  post 	'reviews/like/:id', to: 'reviews#like', as: 'review_like'
+  post 	'reviews/unlike/:id', to: 'reviews#unlike', as: 'review_unlike'
   get 	'users/:id', to: 'users#show', as: 'users_show'
 
 

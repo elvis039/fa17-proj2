@@ -3,7 +3,7 @@
 <p><h1>Reviews</h1>
 	<% @user.reviews.each do |r| %>
 		<p><%= r.movie.title %></br>
-			<%= r.rating %></br>
+			<%= "#{r.rating}/10" %></br>
 			<%= r.comment %></br>
 		</p>
 	<% end %>

@@ -6,6 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'json'
+require 'uri'
+require 'open-uri'
+api_key = '3802e4a0fdfbe45bf420d173bfa5b977'
 
-Movie.create! title: 'Forrest Gump', imdb_id: 'tt0109830', tmdb_id: 13
+
+	for i in 2..100
+		trigger = true
+		begin 
+		@obj = JSON.parse(open("https://api.themoviedb.org/3/movie/#{i}?api_key=#{api_key}&language=en-US").read)
+		rescue OpenURI::HTTPError
+			puts i
+			trigger = false
+		end
+		if trigger then
+			Movie.create! title: @obj['title'], tmdb_id: @obj['id']	
+		end
+	end
+
+
+
 User.create! username: 'Pumbaya', email: 'moayerp@berkeley.edu', password: 'rubydecal'
