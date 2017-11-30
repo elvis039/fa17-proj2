@@ -1,9 +1,18 @@
-<% if user_signed_in? %>
-  
-  <% @movies.each do |m| %>
-    <%= link_to "#{m.title}", movie_path(m) %></br>
-  <% end %>
-
+<html>
+  <body>
+    <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-xs-3">
+        </div>
+        <div id="main-content" class="col-xs-9">
+          <h1>
+            The Moive List
+          </h1>
+        <% if user_signed_in? %>
+          
+          <% @movies.each do |m| %>
+            <%= link_to "#{m.title}", movie_path(m), class:'btn-success' %></br>
+          <% end %>
   <h3>Add movie to our records!</h3>
   <%= form_for Movie.new, controller: 'movies', method: :get, url: movies_new_path do |f| %> 	
     <%= recaptcha_tags %>
@@ -17,3 +26,8 @@
   <%= link_to "Please signup before proceeding (this is placeholder text)", new_user_registration_path %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -15,6 +15,10 @@ gem "recaptcha", require: "recaptcha/rails"
 # devnote
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
+# bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'jquery-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
