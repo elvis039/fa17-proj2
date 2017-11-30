@@ -10,6 +10,7 @@
 		<% if current_user.reviews.exists?(r.id) %>
 			<%= link_to "Delete", reviews_delete_path(r) %>
 		<% end %>
+	</p>
 <% end %>
 
 </br>
@@ -23,5 +24,8 @@
 	<%= f.submit %>
 <% end %>
 
+</br>
+</br>
+<%= link_to "Return Home", home_path %>
 
 <%= options_from_collection_for_select(current_user.playlists.all, :id, :name) %>

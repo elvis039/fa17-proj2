@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 	'reviews/unlike/:id', to: 'reviews#unlike', as: 'review_unlike'
   get 	'users/:id', to: 'users#show', as: 'users_show'
   post  'playlists/create', to: 'playlists#create', as: 'playlists_create'
+  post  'playlists/add', to: 'playlists#add', as: 'playlists_add'
+  post  'playlists/delete', to: 'playlists#delete', as: 'playlists_delete'
 
 
 end
