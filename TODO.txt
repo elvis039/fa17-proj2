@@ -3,6 +3,7 @@ TODO:
 		- STORE SUMMARY IN MOVIE MODEL AS TEXT IN ORDER TO REMOVE API REQUEST? (THIS WAY ONLY NEED 1 TOTAL TO GET MOVIE)
 	- Add first 100 movies to home index so something is already there
 	- User playlists
+		- guides.rubyonrails.org/form_helpers.html
 	- User profile
 		- Comment section for others to comment about user?
 		- Total likes on user's comments

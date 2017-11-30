@@ -10,3 +10,15 @@
 </p>
 
 
+<% if @user.equls(current_user) then %>
+	<h3>Create a new playlist!</h3>
+	<%= form_for Playlist.new, url: reviews_create_path(@movie) do |f| %>
+		Rating: <%= f.number_field :rating, in: 0..10 %>
+		<br />
+		Content: <%= f.text_area :comment %>
+		<br />
+		<%= f.submit %>
+	<% end %>
+<% end %>
+
+
