@@ -10,21 +10,25 @@
 		<p><%= r.movie.title %></br>
 			<%= "#{r.rating}/10" %></br>
 			<%= r.comment %></br>
+			<% if current_user.reviews.exists?(r.id) %>
+			<%= link_to "Delete", reviews_delete_path(r) %></br>
+		<% end %>
 		</p>
 	<% end %>
 </p>
 
 <h1>Playlists</h1>
 <% @user.playlists.each do |r| %>
-	<p><%= r.name %>
+	<p><h3><%= r.name %></h3>
 	<% if @user.id == current_user.id then %>
 		<%= button_to "Delete", playlists_delete_path(r) %>
 	<% end %></p>
 
 	<% r.movies.each do |m| %>
-		<%= Movie.find(m.id).title %>
-
+		<%= Movie.find(m.id).title %></br>
+		<% if @user.id == current_user.id then %>
 		<%= button_to "Delete", playlists_delete_movie_path({"movie" => m, "playlist" => r}) %>
+		<% end %>
 	<% end %>
 <% end %>
 

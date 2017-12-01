@@ -5,8 +5,11 @@
   		<% end %>
 	<% end %>
 <h3>Search Again</h3>
-	<%= form_for Movie.new, url: movies_new_path do |f| %>
-	Title: <%= f.text_area :title %><br />
+	<%= form_for Movie.new, controller: 'movies', method: :get, url: movies_new_path do |f| %> 	
+    <%= recaptcha_tags %>
+     Title: <%= f.text_area :title %>
+	   <br />
+
 	<%= f.submit %>
 	<% end %>
 <%= link_to "Take me back.", home_path %></br>

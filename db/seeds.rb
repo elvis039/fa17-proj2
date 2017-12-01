@@ -28,3 +28,6 @@ api_key = '3802e4a0fdfbe45bf420d173bfa5b977'
 
 
 User.create! username: 'Pumbaya', email: 'moayerp@berkeley.edu', password: 'rubydecal'
+User.create! username: 'Trollmaster3000XX', email: 'troll@troll.com', password: 'trolltrolltroll'
+
+Review.create! rating: 0, comment: "Trash film. Should be erased from existance!", movie_id: 13, user_id: 2
